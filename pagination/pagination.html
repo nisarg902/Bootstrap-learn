@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+        <style>
+    .table-section {
+      display: block;
+    }
+
+    .table-section.active {
+      display: none;
+    }
+  </style>
+
+</head>
+<body class="container-fluid">
+   <div id="table1" class="table-section active table-responsive">
+
+     <table class="table table-hover table-dark table-stripped table-bordered">
+      <p>The .pagination class provides pagination links</p>
+        <thead>
+          <tr>
+            <th>class</th>
+            <th>effect</th>
+            <th>class</th>
+            <th>effect</th>
+            <th>class</th>
+            <th>effect</th>
+            <th>class</th>
+            <th>effect</th>
+            <th>class</th>
+            <th>effect</th>
+            <th>class</th>
+            <th>effect</th>
+            <th>class</th>
+            <th>effect</th>
+            <th>class</th>
+            <th>effect</th>
+            <th>class</th>
+            <th>effect</th>
+            <th>class</th>
+            <th>effect</th>
+            <th>class</th>
+            <th>effect</th>
+            <th>class</th>
+            <th>effect</th>
+            <th>class</th>
+            <th>effect</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+               <td>Alice</td>
+          <td>Engineer</td>
+            </tr>
+        </tbody>
+        
+    </table>  
+   </div>
+   <div id="table2" class="table-section">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Job</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Alice</td>
+          <td>Engineer</td>
+        </tr>
+    
+      </tbody>
+    </table>
+  </div>
+    
+      <ul class="pagination">
+                 <li class="page-item "><a class="page-link">&laquo</a></li>
+                <li class="page-item active"><a class="page-link" onclick="showTable(1)" href="#"> 1</a></li>
+                <li class="page-item"><a class="page-link" onclick="showTable(2)" href="#">2</a></li>
+                <li class="page-item disabled"><a class="page-link">3</a></li>
+                 <li class="page-item "><a class="page-link">&raquo</a></li>
+
+             </ul>
+           
+             <script>
+  function showTable(page) {
+    // 1. Hide all table sections by removing 'active' class
+    var sections = document.querySelectorAll('.table-section');
+    sections.forEach(function(section) {
+      section.classList.remove('active');
+    });
+
+    // 2. Show the selected table by adding 'active' class
+    var tableToShow = document.getElementById('table' + page);
+    tableToShow.classList.add('active');
+
+    // 3. Remove 'active' class from all pagination buttons
+    var buttons = document.querySelectorAll('.page-item');
+    buttons.forEach(function(item) {
+      item.classList.remove('active');
+    });
+
+    // 4. Add 'active' class to the clicked page number
+    buttons[page].classList.add('active'); // use page directly if << exists
+  }
+</script>
+
+</body>
+</html>

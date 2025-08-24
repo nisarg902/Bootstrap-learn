@@ -1,0 +1,41 @@
+<!-- Tab buttons -->
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" onclick="showTab(1)">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" onclick="showTab(2)">Profile</a>
+  </li>
+</ul>
+
+<!-- Tab content -->
+<div id="tab1" class="tab-pane active">Welcome Home</div>
+<div id="tab2" class="tab-pane">Your Profile</div>
+
+<style>
+  .tab-pane {
+    display: none;
+  }
+
+  .tab-pane.active {
+    display: block;
+  }
+</style>
+
+<script>
+  function showTab(tabNum) {
+    // Hide all tabs
+    document.querySelectorAll('.tab-pane').forEach(function(tab) {
+      tab.classList.remove('active');
+    });
+
+    // Remove active from all buttons
+    document.querySelectorAll('.nav-link').forEach(function(link) {
+      link.classList.remove('active');
+    });
+
+    // Show selected tab
+    document.getElementById('tab' + tabNum).classList.add('active');
+    document.querySelectorAll('.nav-link')[tabNum - 1].classList.add('active');
+  }
+</script>
