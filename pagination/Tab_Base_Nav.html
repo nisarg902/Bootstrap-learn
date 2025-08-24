@@ -1,0 +1,66 @@
+<!-- Tab buttons -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tab Base Nav</title>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    
+     
+</head>
+<ul class="nav nav-pills">
+  <li class="nav-item">
+    <a class="nav-link active" onclick="showTab(1)">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" onclick="showTab(2)">Profile</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" onclick="showTab(3)" >About Me</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" onclick="showTab(4)" >contact me</a>
+  </li>
+</ul>
+
+<!-- Tab content -->
+<div id="tab1" class="tab-pane active">Welcome Home</div>
+<div id="tab2" class="tab-pane">Your Profile</div>
+<div id="tab3" class="tab-pane">      <p>Hello! My name is Nisarg, and I am passionate about web development and learning new technologies. I enjoy creating responsive, user-friendly websites and constantly improving my skills in HTML, CSS, JavaScript, and Bootstrap.</p>
+      <p>In addition to coding, I am interested in [your hobbies/interests, e.g., graphic design, photography, or problem-solving]. I love working on projects that challenge me to think creatively and grow professionally.</p>
+      <p>My goal is to contribute to meaningful projects, collaborate with like-minded individuals, and continue expanding my knowledge in the tech world.</p>
+</div>
+
+<div id="tab4" class="tab-pane"    <p>You can reach me at <strong>nisargwanve1@gmail.com</strong></p>
+</div>
+
+<style>
+  .tab-pane {
+    display: none;
+  }
+
+  .tab-pane.active {
+    display: block;
+  }
+</style>
+
+<script>
+  function showTab(tabNum) {
+    // Hide all tabs
+    document.querySelectorAll('.tab-pane').forEach(function(tab) {
+      tab.classList.remove('active');
+    });
+
+    // Remove active from all buttons
+    document.querySelectorAll('.nav-link').forEach(function(link) {
+      link.classList.remove('active');
+    });
+
+    // Show selected tab
+    document.getElementById('tab' + tabNum).classList.add('active');
+    document.querySelectorAll('.nav-link')[tabNum - 1].classList.add('active');
+  }
+</script> 
